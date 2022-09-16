@@ -1,19 +1,42 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ModuleFederationPlugin } = require('webpack').container;
+// const deps = require("./package.json").dependencies;
 
 module.exports = {
     entry: './src/index.tsx',
     output: {
-        path: path.join(__dirname, '/dist'), // the bundle output path
-        filename: 'bundle.js' // the name of the bundle
+        path: path.join(__dirname, '/build'), // the bundle output path
+        filename: 'bundle.js',
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/index.html' // to import index.html file inside index.js
-        })
+            template: './public/index.html'
+        }),
+        new ModuleFederationPlugin({
+            name: 'app1',
+            filename: 'remoteEntry.js',
+            exposes: {
+                './App1': './src/components/App1',
+            },
+            // shared: {
+            //     ...deps,
+            //     react: {
+            //         singleton: true,
+            //         requiredVersion: deps.react,
+            //     },
+            //     "react-dom": {
+            //         singleton: true,
+            //         requiredVersion: deps["react-dom"],
+            //     },
+            // }
+        }),
     ],
     devServer: {
-        port: 3030 // you can change the port
+        port: 3001,
+        historyApiFallback: {
+            index: 'index.html',
+        },
     },
     module: {
         rules: [
