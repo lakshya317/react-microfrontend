@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/index.tsx',
     output: {
         path: path.join(__dirname, '/build'), // the bundle output path
-        filename: 'bundle.js',
+        filename: 'bundle.js'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -24,20 +24,20 @@ module.exports = {
                 ...dependencies,
                 react: {
                     singleton: true,
-                    requiredVersion: dependencies['react'],
+                    requiredVersion: dependencies['react']
                 },
                 'react-dom': {
                     singleton: true,
-                    requiredVersion: dependencies['react-dom'],
-                },
-            },
-        }),
+                    requiredVersion: dependencies['react-dom']
+                }
+            }
+        })
     ],
     devServer: {
         port: 3001,
         historyApiFallback: {
-            index: 'index.html',
-        },
+            index: 'index.html'
+        }
     },
     module: {
         rules: [
