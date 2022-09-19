@@ -1,0 +1,98 @@
+@import "~bootstrap/scss/bootstrap";
+@import "../../assets/styles/customColors";
+
+.main-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-items: center;
+}
+
+.body-title-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.body-title-container, .cartoon-body-header{
+    background-color: $dark-theme-bg;
+}
+
+.cartoon-body-header{
+    border-bottom: 1px solid $dark-theme-border;
+}
+
+
+// Media Queries
+
+@media (orientation: landscape) {
+    .body-title{
+        font-size: 25px;
+    }
+    .react-ts-logo{
+        width: 200px;
+    }
+
+    .body-title-container, .cartoon-body-header{
+        margin-top: calc(45vh - 82px);
+    }
+}
+
+@media (orientation: portrait) {
+
+    .body-title{
+        font-size: 18px;
+    }
+
+    .react-ts-logo{
+        width: 100px;
+    }
+
+    .body-title-container, .cartoon-body-header{
+        margin-top: calc(45vh - 67px);
+    }
+}
+
+.cartoon-body-header{
+    margin-top: calc(45vh - 82px);
+    position: sticky;
+    top: -2px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+//Scroll Bar CSS
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $gray-800;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $gray-600;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $gray-500;
+}

@@ -1,9 +1,11 @@
 import React from 'react';
+import ScrollPage from './ScrollPage/ScrollPage';
+import "./App.scss"
 
 function App2() {
     return (
-        <div className="App2">
-            App 2
+        <div className="App">
+            <ScrollPage/>
         </div>
     );
 }
