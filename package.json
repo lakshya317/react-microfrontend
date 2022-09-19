@@ -8,7 +8,7 @@
         ]
     },
     "scripts": {
-        "start": "concurrently \"cd ./app1 && npm run serve\" \"cd ./app2 && npm run serve\" \"cd ./container && npm run serve\"",
+        "start": "concurrently \"set PORT=3001 && cd ./app1 && npm run start\" \"set PORT=3002 && cd ./app2 && npm run start\" \"set PORT=3000 && cd ./container && npm run start\"",
         "format": "concurrently \"cd ./app1 && npm run format\" \"cd ./app2 && npm run format\" \"cd ./container && npm run format\""
     },
     "devDependencies": {
