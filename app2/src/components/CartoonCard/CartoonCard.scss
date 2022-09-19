@@ -47,14 +47,31 @@
     }
 }
 
-.cartoon-card{
-    background-color: $dark-theme-darker-bg;
-    border: 2px solid $dark-theme-border;
-    box-shadow: 0 0 3px 3px $dark-theme-shadow;
+
+// Theme Styles
+
+.light{
+    .cartoon-card{
+        background-color: $light-theme-lighter-bg;
+        border: 2px solid $light-theme-border;
+        box-shadow: 0 0 3px 6px $light-theme-shadow;
+    }
+
+    .cartoon-genre{
+        background-color: $light-theme-darker-bg;
+    }
 }
 
-.cartoon-genre{
-    background-color: $dark-theme-lighter-bg;
+.dark{
+    .cartoon-card{
+        background-color: $dark-theme-darker-bg;
+        border: 2px solid $dark-theme-border;
+        box-shadow: 0 0 3px 3px $dark-theme-shadow;
+    }
+
+    .cartoon-genre{
+        background-color: $dark-theme-lighter-bg;
+    }
 }
 
 

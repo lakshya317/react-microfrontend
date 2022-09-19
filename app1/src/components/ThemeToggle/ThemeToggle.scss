@@ -1,0 +1,62 @@
+@import "~bootstrap/scss/bootstrap";
+
+.toggle-container{
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+}
+
+.toggle-icon{
+    &-sun{
+        height: 18px;
+        margin-top: -4px;
+        margin-left: -2px;
+    }
+
+    &-moon{
+        height: 15px;
+        margin-left: -2px;
+        margin-top: -2px;
+    }
+}
+
+//Unchecked BG
+.react-toggle-track{
+    background-color: black;
+
+    .light & {
+        border: 2px solid black;
+    }
+
+    .dark & {
+        border: 2px solid white;
+    }
+}
+
+// Hover on Unchecked
+.react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background-color: $gray-700;
+}
+
+//Checked BG
+.react-toggle--checked .react-toggle-track {
+    background-color: $gray-100;
+}
+
+
+//Hover on Checked
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background-color: $gray-300;
+}
+
+// Thumb Outline
+.react-toggle--focus .react-toggle-thumb{
+    outline: none;
+    box-shadow: none;
+}
+
+// Thumb checked
+.react-toggle--checked .react-toggle-thumb {
+    border: 1px solid white;
+    background-color: black;
+}

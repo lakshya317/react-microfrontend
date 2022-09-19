@@ -1,5 +1,6 @@
 import React from 'react';
 import Shell_Logo from '../../assets/images/Shell_Logo.png';
+import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
 import './ToolBar.scss';
 
 const TooolBar: React.FC<{}> = () => {
@@ -15,6 +16,7 @@ const TooolBar: React.FC<{}> = () => {
             <div className="shell-logo-container" onClick={handleClick}>
                 <img className="shell-logo" src={Shell_Logo} alt="Shell Logo" />
             </div>
+            <ThemeToggle/>
         </div>
     );
 };

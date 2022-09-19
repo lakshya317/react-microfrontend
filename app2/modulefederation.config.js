@@ -7,6 +7,9 @@ module.exports = {
         './App2': './src/components/App2',
         './ScrollPage': './src/components/ScrollPage/ScrollPage'
     },
+    remotes:{
+        container: 'container@http://localhost:3000/remoteEntry.js'
+    },
     shared: {
         ...dependencies,
         react: {

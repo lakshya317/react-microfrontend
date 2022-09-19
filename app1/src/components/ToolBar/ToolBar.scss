@@ -1,6 +1,22 @@
 @import "~bootstrap/scss/bootstrap";
 @import "../../assets/styles/customColors";
 
+.light{
+    .toolbar{
+        background-color: $light-theme-darker-bg;
+        border-bottom: 2px solid $light-theme-border;
+        box-shadow: 0 4px 4px -4px $light-theme-shadow;
+    }
+}
+
+.dark{
+    .toolbar{
+        background-color: $dark-theme-darker-bg;
+        border-bottom: 2px solid $dark-theme-border;
+        box-shadow: 0 4px 4px -4px $dark-theme-shadow;
+    }
+}
+
 .toolbar{
     width: 100%;
     min-height: 50px;
@@ -8,9 +24,6 @@
     flex-direction: row;
     justify-content: space-between;
     flex-shrink: 0;
-    background-color: $dark-theme-darker-bg;
-    border-bottom: 2px solid $dark-theme-border;
-    box-shadow: 0 4px 4px -4px $dark-theme-shadow;
 }
 
 .shell-logo-container{
