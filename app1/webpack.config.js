@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
-// const deps = require("./package.json").dependencies;
+const { dependencies } = require('./package.json');
 
 module.exports = {
     entry: './src/index.tsx',
@@ -18,18 +18,19 @@ module.exports = {
             filename: 'remoteEntry.js',
             exposes: {
                 './App1': './src/components/App1',
+                './ToolBar': './src/components/ToolBar/ToolBar'
             },
-            // shared: {
-            //     ...deps,
-            //     react: {
-            //         singleton: true,
-            //         requiredVersion: deps.react,
-            //     },
-            //     "react-dom": {
-            //         singleton: true,
-            //         requiredVersion: deps["react-dom"],
-            //     },
-            // }
+            shared: {
+                ...dependencies,
+                react: {
+                    singleton: true,
+                    requiredVersion: dependencies['react'],
+                },
+                'react-dom': {
+                    singleton: true,
+                    requiredVersion: dependencies['react-dom'],
+                },
+            },
         }),
     ],
     devServer: {

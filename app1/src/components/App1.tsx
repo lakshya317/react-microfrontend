@@ -1,9 +1,10 @@
 import React from 'react';
+import ToolBar from './ToolBar/ToolBar';
 
 function App1() {
     return (
         <div className="App1">
-            App 1
+            <ToolBar/>
         </div>
     );
 }
