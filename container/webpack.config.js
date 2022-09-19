@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
+const { dependencies } = require('./package.json');
 
 module.exports = {
     entry: './src/index.tsx',
@@ -17,6 +18,17 @@ module.exports = {
             remotes: {
                 app1: 'app1@http://localhost:3001/remoteEntry.js',
                 app2: 'app2@http://localhost:3002/remoteEntry.js',
+            },
+            shared: {
+                ...dependencies,
+                react: {
+                    singleton: true,
+                    requiredVersion: dependencies['react'],
+                },
+                'react-dom': {
+                    singleton: true,
+                    requiredVersion: dependencies['react-dom'],
+                },
             },
         })
     ],
