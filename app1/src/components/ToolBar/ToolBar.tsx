@@ -3,11 +3,13 @@ import Shell_Logo from '../../assets/images/Shell_Logo.png';
 import './ToolBar.scss';
 
 const TooolBar: React.FC<{}> = () => {
-
     const handleClick: React.MouseEventHandler = () => {
-        (document.getElementById("scroll-parent") as Element).scrollTo({top: 0, behavior: 'smooth'});
-    }
-    
+        (document.getElementById('scroll-parent') as Element).scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     return (
         <div className="toolbar">
             <div className="shell-logo-container" onClick={handleClick}>
@@ -15,6 +17,6 @@ const TooolBar: React.FC<{}> = () => {
             </div>
         </div>
     );
-}
+};
 
 export default TooolBar;

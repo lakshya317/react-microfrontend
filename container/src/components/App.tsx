@@ -1,5 +1,5 @@
 import React from 'react';
-import "./App.scss"
+import './App.scss';
 import ToolBar from 'app1/ToolBar';
 import ScrollPage from 'app2/ScrollPage';
 
