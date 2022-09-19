@@ -7,6 +7,9 @@ module.exports = {
         './App1': './src/components/App1',
         './ToolBar': './src/components/ToolBar/ToolBar'
     },
+    remotes:{
+        container: 'container@http://localhost:3000/remoteEntry.js'
+    },
     shared: {
         ...dependencies,
         react: {

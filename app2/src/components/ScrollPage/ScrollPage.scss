@@ -21,12 +21,24 @@
     padding: 20px;
 }
 
-.body-title-container, .cartoon-body-header{
-    background-color: $dark-theme-bg;
+.light{
+    .body-title-container, .cartoon-body-header{
+        background-color: $light-theme-bg;
+    }
+
+    .cartoon-body-header{
+        border-bottom: 1px solid $light-theme-border;
+    }
 }
 
-.cartoon-body-header{
-    border-bottom: 1px solid $dark-theme-border;
+.dark{
+    .body-title-container, .cartoon-body-header{
+        background-color: $dark-theme-bg;
+    }
+
+    .cartoon-body-header{
+        border-bottom: 1px solid $dark-theme-border;
+    }
 }
 
 
@@ -82,17 +94,39 @@
     border-radius: 10px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: $gray-800;
+.light {
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: $gray-200;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: $gray-500;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: $gray-600;
+    }
+
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: $gray-600;
-}
+.dark {
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: $gray-500;
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: $gray-800;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: $gray-600;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: $gray-500;
+    }
 }
